@@ -24,6 +24,7 @@
 
 + (UIColor *)jsq_messageBubbleGreenColor
 {
+    
     return [UIColor colorWithHue:130.0f / 360.0f
                       saturation:0.68f
                       brightness:0.84f
@@ -48,10 +49,12 @@
 
 + (UIColor *)jsq_messageBubbleLightGrayColor
 {
-    return [UIColor colorWithHue:240.0f / 360.0f
-                      saturation:0.02f
-                      brightness:0.92f
-                           alpha:1.0f];
+    return [UIColor colorWithRed: 223.f/255.f green: 242.f/255.f blue: 251.f/255.f alpha:1.0];
+//
+//    return [UIColor colorWithHue:240.0f / 360.0f
+//                      saturation:0.02f
+//                      brightness:0.92f
+//                           alpha:1.0f];
 }
 
 #pragma mark - Utilities

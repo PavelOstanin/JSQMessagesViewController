@@ -30,6 +30,13 @@
 	<array>
 		<string>armv7</string>
 	</array>
+    <key>UIAppFonts</key>
+    <array>
+        <string>MavenPro-Black.ttf</string>
+        <string>MavenPro-Bold.ttf</string>
+        <string>MavenPro-Medium.ttf</string>
+        <string>MavenPro-Regular.ttf</string>
+    </array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

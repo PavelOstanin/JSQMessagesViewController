@@ -35,8 +35,8 @@
 #import "UIImage+JSQMessages.h"
 
 
-const CGFloat kJSQMessagesCollectionViewCellLabelHeightDefault = 20.0f;
-const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
+const CGFloat kJSQMessagesCollectionViewCellLabelHeightDefault = 30.0f;
+const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 32.0f;
 
 
 @interface JSQMessagesCollectionViewFlowLayout ()
@@ -74,7 +74,7 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
     }
     
     _messageBubbleTextViewFrameInsets = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 6.0f);
-    _messageBubbleTextViewTextContainerInsets = UIEdgeInsetsMake(7.0f, 14.0f, 7.0f, 14.0f);
+    _messageBubbleTextViewTextContainerInsets = UIEdgeInsetsMake(14.0f, 14.0f, 7.0f, 14.0f);
     
     CGSize defaultAvatarSize = CGSizeMake(kJSQMessagesCollectionViewAvatarSizeDefault, kJSQMessagesCollectionViewAvatarSizeDefault);
     _incomingAvatarViewSize = defaultAvatarSize;
@@ -406,10 +406,50 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
 {
     id<JSQMessageData> messageItem = [self.collectionView.dataSource collectionView:self.collectionView
                                                       messageDataForItemAtIndexPath:indexPath];
+    
+    CGSize cellSize = [self.bubbleSizeCalculator messageBubbleSizeForMessageData:messageItem
+                                                                     atIndexPath:indexPath
+                                                                      withLayout:self];
+    
+    
+#warning РАСЧЕТ ЯЧЕЙКИ
+    
+    
+    
+    
+    
+    NSString *text1 = [messageItem senderDisplayName];
+    NSString *text2 = @"12/12/99";
+    
+    CGRect rect1 = CGRectZero;
+    CGRect rect2 = CGRectZero;
 
-    return [self.bubbleSizeCalculator messageBubbleSizeForMessageData:messageItem
-                                                          atIndexPath:indexPath
-                                                           withLayout:self];
+    NSDictionary *attrDict = @{NSFontAttributeName : [UIFont systemFontOfSize: 17]};
+    
+    rect1 = [text1 boundingRectWithSize:CGSizeMake(0,9999)
+                                options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                             attributes:attrDict
+                                context:Nil];
+    
+    rect2 = [text2 boundingRectWithSize:CGSizeMake(0,9999)
+                                options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                             attributes:attrDict
+                                context:Nil];
+
+    
+    NSLog(@"%f", rect1.size.width);
+    NSLog(@"%f", rect2.size.width);
+    
+    CGFloat cellWidth = MIN([UIScreen mainScreen].bounds.size.width - 108.f, rect1.size.width + rect2.size.width + 8.f + 32.f);
+    
+            cellSize = CGSizeMake(MAX(cellWidth, cellSize.width) , cellSize.height);
+
+    //                cellSize = CGSizeMake(MAX(cellWidth, cellSize.width) , cellSize.height);
+
+    
+    CGSize newSize = CGSizeMake (cellSize.width, cellSize.height);
+    
+    return newSize;
 }
 
 - (CGSize)sizeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -418,9 +458,12 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
     JSQMessagesCollectionViewLayoutAttributes *attributes = (JSQMessagesCollectionViewLayoutAttributes *)[self layoutAttributesForItemAtIndexPath:indexPath];
     
     CGFloat finalHeight = messageBubbleSize.height;
+    
     finalHeight += attributes.cellTopLabelHeight;
     finalHeight += attributes.messageBubbleTopLabelHeight;
     finalHeight += attributes.cellBottomLabelHeight;
+    finalHeight += 37.f;
+    finalHeight += 7.f;
     
     return CGSizeMake(self.itemWidth, ceilf(finalHeight));
 }

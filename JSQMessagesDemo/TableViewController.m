@@ -149,8 +149,8 @@
             {
                 DemoMessagesViewController *vc = [DemoMessagesViewController messagesViewController];
                 vc.delegateModal = self;
-                UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
-                [self presentViewController:nc animated:YES completion:nil];
+//                UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
+                [self presentViewController:vc animated:YES completion:nil];
             }
                 break;
         }

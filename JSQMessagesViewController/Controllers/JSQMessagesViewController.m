@@ -518,6 +518,9 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
 
     if (!isMediaMessage) {
         cell.textView.text = [messageItem text];
+        cell.userNameLabel.text = [messageItem senderDisplayName];
+        cell.messageDateLabel.text = @"12/12/99";
+        
         NSParameterAssert(cell.textView.text != nil);
 
         id<JSQMessageBubbleImageDataSource> bubbleImageDataSource = [collectionView.dataSource collectionView:collectionView messageBubbleImageDataForItemAtIndexPath:indexPath];
@@ -555,9 +558,9 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
         }
     }
 
-    cell.cellTopLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellTopLabelAtIndexPath:indexPath];
-    cell.messageBubbleTopLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:indexPath];
-    cell.cellBottomLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellBottomLabelAtIndexPath:indexPath];
+//    cell.cellTopLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellTopLabelAtIndexPath:indexPath];
+//    cell.messageBubbleTopLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:indexPath];
+//    cell.cellBottomLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellBottomLabelAtIndexPath:indexPath];
 
     CGFloat bubbleTopLabelInset = (avatarImageDataSource != nil) ? 60.0f : 15.0f;
 
@@ -701,7 +704,30 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
 - (CGSize)collectionView:(JSQMessagesCollectionView *)collectionView
                   layout:(JSQMessagesCollectionViewFlowLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [collectionViewLayout sizeForItemAtIndexPath:indexPath];
+    CGSize cellSize = [collectionViewLayout sizeForItemAtIndexPath:indexPath];
+    
+//    if (indexPath) {
+//        if ([collectionView cellForItemAtIndexPath: indexPath]) {
+//            JSQMessagesCollectionViewCell *cell =  [collectionView cellForItemAtIndexPath: indexPath];
+//            
+//            if (cell.messageDateLabel && cell.userNameLabel) {
+//               
+//                
+//                CGSize textSize = [[cell.messageDateLabel text] sizeWithAttributes:@{NSFontAttributeName:[cell.messageDateLabel font]}];
+//                CGSize userName = [[cell.userNameLabel text] sizeWithAttributes:@{NSFontAttributeName:[cell.userNameLabel font]}];
+//                
+//                CGFloat cellWidth = MIN([UIScreen mainScreen].bounds.size.width - 108.f, textSize.width + userName.width + 8.f + 32.f);
+//                cellSize = CGSizeMake(MAX(cellWidth, cellSize.width) , cellSize.height);
+//                
+//                NSLog(@"%f", cellWidth);
+//            }
+//        }
+//    }
+    
+    
+    
+    return cellSize;
+    //[collectionViewLayout sizeForItemAtIndexPath:indexPath];
 }
 
 - (CGFloat)collectionView:(JSQMessagesCollectionView *)collectionView

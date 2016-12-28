@@ -87,7 +87,12 @@
 
 + (UIImage *)jsq_defaultAccessoryImage
 {
-    return [UIImage jsq_bubbleImageFromBundleWithName:@"clip"];
+    return [UIImage jsq_bubbleImageFromBundleWithName:@"smile_ic"];
+}
+
++ (UIImage *)jsq_defaultSendMessageButtonImage
+{
+    return [UIImage jsq_bubbleImageFromBundleWithName:@"send_message"];
 }
 
 + (UIImage *)jsq_defaultTypingIndicatorImage

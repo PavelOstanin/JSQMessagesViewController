@@ -96,6 +96,11 @@
      *
      *  You should have a mutable array or orderedSet, or something.
      */
+    
+    
+    
+    
+    
     self.messages = [[NSMutableArray alloc] initWithObjects:
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
                                         senderDisplayName:kJSQDemoAvatarDisplayNameSquires

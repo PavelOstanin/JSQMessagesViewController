@@ -44,7 +44,9 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
 @property (weak, nonatomic) IBOutlet UIButton *accessoryButton;
 
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageBubbleContainerWidthConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageBubbleContainerTopConstraint;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewTopVerticalSpaceConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewBottomVerticalSpaceConstraint;
@@ -57,6 +59,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewWidthConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewInsetConstraint;
 
 @property (assign, nonatomic) UIEdgeInsets textViewFrameInsets;
 
@@ -207,9 +210,9 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     if (!UIEdgeInsetsEqualToEdgeInsets(self.textView.textContainerInset, customAttributes.textViewTextContainerInsets)) {
         self.textView.textContainerInset = customAttributes.textViewTextContainerInsets;
     }
-
+//+ self.messageBubbleContainerTopConstraint.constant * 2
     self.textViewFrameInsets = customAttributes.textViewFrameInsets;
-
+    
     [self jsq_updateConstraint:self.messageBubbleContainerWidthConstraint
                   withConstant:customAttributes.messageBubbleContainerViewWidth];
 
@@ -315,7 +318,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     if (CGSizeEqualToSize(avatarViewSize, self.avatarViewSize)) {
         return;
     }
-
+    
     [self jsq_updateConstraint:self.avatarContainerViewWidthConstraint withConstant:avatarViewSize.width];
     [self jsq_updateConstraint:self.avatarContainerViewHeightConstraint withConstant:avatarViewSize.height];
 }
@@ -360,8 +363,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
 - (CGSize)avatarViewSize
 {
-    return CGSizeMake(self.avatarContainerViewWidthConstraint.constant,
-                      self.avatarContainerViewHeightConstraint.constant);
+    return CGSizeMake(self.avatarContainerViewWidthConstraint.constant + self.avatarContainerViewInsetConstraint.constant,
+                      self.avatarContainerViewHeightConstraint.constant + self.messageBubbleContainerTopConstraint.constant * 2);
 }
 
 - (UIEdgeInsets)textViewFrameInsets

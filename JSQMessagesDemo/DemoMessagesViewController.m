@@ -39,6 +39,13 @@
 {
     [super viewDidLoad];
     
+    self.collectionView.collectionViewLayout.messageBubbleFont = [UIFont systemFontOfSize: 14.f];
+    self.inputToolbar.contentView.textView.font = [UIFont systemFontOfSize: 14.f];
+    self.inputToolbar.contentView.textView.placeHolder = @"Type your message…";
+    
+//    self.collectionView.frame = CGRectMake(0, 64.f, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64.f);
+    
+    
     self.title = @"JSQMessages";
 
     self.inputToolbar.contentView.textView.pasteDelegate = self;
@@ -359,15 +366,19 @@
 
 - (void)didPressAccessoryButton:(UIButton *)sender
 {
-    [self.inputToolbar.contentView.textView resignFirstResponder];
-
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Media messages", nil)
-                                                       delegate:self
-                                              cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
-                                         destructiveButtonTitle:nil
-                                              otherButtonTitles:NSLocalizedString(@"Send photo", nil), NSLocalizedString(@"Send location", nil), NSLocalizedString(@"Send video", nil), NSLocalizedString(@"Send video thumbnail", nil), NSLocalizedString(@"Send audio", nil), nil];
+//    self.inputToolbar.contentView.textView ;
+//    self.inputToolbar.contentView.textView.textInputMode = ;
+    [self.inputToolbar.contentView.textView becomeFirstResponder];
     
-    [sheet showFromToolbar:self.inputToolbar];
+//    [self.inputToolbar.contentView.textView resignFirstResponder];
+//
+//    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Media messages", nil)
+//                                                       delegate:self
+//                                              cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+//                                         destructiveButtonTitle:nil
+//                                              otherButtonTitles:NSLocalizedString(@"Send photo", nil), NSLocalizedString(@"Send location", nil), NSLocalizedString(@"Send video", nil), NSLocalizedString(@"Send video thumbnail", nil), NSLocalizedString(@"Send audio", nil), nil];
+//    
+//    [sheet showFromToolbar:self.inputToolbar];
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -424,7 +435,10 @@
 
 - (id<JSQMessageData>)collectionView:(JSQMessagesCollectionView *)collectionView messageDataForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self.demoData.messages objectAtIndex:indexPath.item];
+    if (self.demoData.messages.count > indexPath.item) {
+        return [self.demoData.messages objectAtIndex:indexPath.item];
+    }
+    return nil;
 }
 
 - (void)collectionView:(JSQMessagesCollectionView *)collectionView didDeleteMessageAtIndexPath:(NSIndexPath *)indexPath
@@ -548,6 +562,7 @@
      */
     JSQMessagesCollectionViewCell *cell = (JSQMessagesCollectionViewCell *)[super collectionView:collectionView cellForItemAtIndexPath:indexPath];
     
+    
     /**
      *  Configure almost *anything* on the cell
      *
@@ -566,7 +581,7 @@
     
     if (!msg.isMediaMessage) {
         
-        if ([msg.senderId isEqualToString:self.senderId]) {
+        if ([msg.senderId isEqualToString: self.senderId]) {
             cell.textView.textColor = [UIColor blackColor];
         }
         else {
