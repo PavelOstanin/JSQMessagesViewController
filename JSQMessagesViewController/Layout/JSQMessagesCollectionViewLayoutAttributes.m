@@ -26,6 +26,7 @@
     self = [super init];
     if (self) {
         _messageBubbleFont = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+        _userFullNameMessageBubbleFont = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
         _messageBubbleContainerViewWidth = 320.0f;
     }
     return self;
@@ -37,6 +38,12 @@
 {
     NSParameterAssert(messageBubbleFont != nil);
     _messageBubbleFont = messageBubbleFont;
+}
+
+- (void) setUserFullNameMessageBubbleFont:(UIFont *)userFullNameMessageBubbleFont
+{
+    NSParameterAssert(userFullNameMessageBubbleFont != nil);
+    _userFullNameMessageBubbleFont = userFullNameMessageBubbleFont;
 }
 
 - (void)setMessageBubbleContainerViewWidth:(CGFloat)messageBubbleContainerViewWidth
@@ -134,6 +141,7 @@
     }
     
     copy.messageBubbleFont = self.messageBubbleFont;
+    copy.userFullNameMessageBubbleFont = self.userFullNameMessageBubbleFont;
     copy.messageBubbleContainerViewWidth = self.messageBubbleContainerViewWidth;
     copy.textViewFrameInsets = self.textViewFrameInsets;
     copy.textViewTextContainerInsets = self.textViewTextContainerInsets;

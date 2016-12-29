@@ -92,6 +92,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (UIImage *)jsq_shareActionImage;
 
++ (UIImage *)jsq_loadMoreMessagesButtonIcon;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

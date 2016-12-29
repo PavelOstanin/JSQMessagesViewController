@@ -207,6 +207,16 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
         self.textView.font = customAttributes.messageBubbleFont;
     }
 
+    if (self.userNameLabel.font != customAttributes.userFullNameMessageBubbleFont) {
+        self.userNameLabel.font = customAttributes.userFullNameMessageBubbleFont;
+        self.userNameLabel.textColor = [UIColor colorWithRed: 142.f/255.f green: 157.f/255.f blue: 164.f/255.f alpha: 1.0];
+    }
+
+    if (self.messageDateLabel.font != customAttributes.userFullNameMessageBubbleFont) {
+        self.messageDateLabel.font = customAttributes.userFullNameMessageBubbleFont;
+        self.messageDateLabel.textColor = [UIColor colorWithRed: 142.f/255.f green: 157.f/255.f blue: 164.f/255.f alpha: 1.0];
+    }
+
     if (!UIEdgeInsetsEqualToEdgeInsets(self.textView.textContainerInset, customAttributes.textViewTextContainerInsets)) {
         self.textView.textContainerInset = customAttributes.textViewTextContainerInsets;
     }

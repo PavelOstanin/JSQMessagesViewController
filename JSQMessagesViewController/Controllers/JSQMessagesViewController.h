@@ -89,6 +89,9 @@ NS_ASSUME_NONNULL_BEGIN
  *  completely overriding many delegate and data source methods for the collectionView,
  *  including `collectionView:cellForItemAtIndexPath:`.
  */
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *collectionViewTopConstraint;
+
 @property (copy, nonatomic) NSString *outgoingMediaCellIdentifier;
 
 /**

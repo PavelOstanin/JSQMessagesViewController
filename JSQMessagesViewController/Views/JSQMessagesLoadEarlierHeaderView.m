@@ -20,6 +20,7 @@
 #import "JSQMessagesLoadEarlierHeaderView.h"
 
 #import "NSBundle+JSQMessages.h"
+#import "UIImage+JSQMessages.h"
 
 
 const CGFloat kJSQMessagesLoadEarlierHeaderViewHeight = 32.0f;
@@ -55,10 +56,8 @@ const CGFloat kJSQMessagesLoadEarlierHeaderViewHeight = 32.0f;
     [super awakeFromNib];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
 
-    self.backgroundColor = [UIColor clearColor];
-#warning  HEADER Button
-    
-    [self.loadButton setTitle:[NSBundle jsq_localizedStringForKey:@"load_earlier_messages"] forState:UIControlStateNormal];
+    self.backgroundColor = [UIColor clearColor];   
+    [self.loadButton setImage: [UIImage jsq_loadMoreMessagesButtonIcon] forState: UIControlStateNormal];
     self.loadButton.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
 }
 

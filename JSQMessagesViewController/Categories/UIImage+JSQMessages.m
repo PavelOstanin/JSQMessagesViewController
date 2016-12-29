@@ -114,4 +114,10 @@
 {
     return [UIImage jsq_bubbleImageFromBundleWithName:@"share"];
 }
+
++ (UIImage *)jsq_loadMoreMessagesButtonIcon
+{
+    return [UIImage jsq_bubbleImageFromBundleWithName:@"loadMoreMessagesButton_icon"];
+}
+
 @end

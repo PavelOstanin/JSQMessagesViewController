@@ -32,6 +32,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (strong, nonatomic) UIFont *messageBubbleFont;
 
+@property (strong, nonatomic) UIFont *userFullNameMessageBubbleFont;
+
+
 /**
  *  The width of the `messageBubbleContainerView` of a `JSQMessagesCollectionViewCell`.
  *  This value should be greater than `0.0`.

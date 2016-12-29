@@ -516,9 +516,11 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     cell.accessibilityIdentifier = [NSString stringWithFormat:@"(%ld, %ld)", (long)indexPath.section, (long)indexPath.row];
     cell.delegate = collectionView;
 
+    cell.userNameLabel.text = [messageItem senderDisplayName];
+    
     if (!isMediaMessage) {
         cell.textView.text = [messageItem text];
-        cell.userNameLabel.text = [messageItem senderDisplayName];
+//        cell.userNameLabel.text = [messageItem senderDisplayName];
         cell.messageDateLabel.text = @"12/12/99";
         
         NSParameterAssert(cell.textView.text != nil);

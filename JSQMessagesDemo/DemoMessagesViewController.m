@@ -39,7 +39,10 @@
 {
     [super viewDidLoad];
     
-    self.collectionView.collectionViewLayout.messageBubbleFont = [UIFont systemFontOfSize: 14.f];
+    self.collectionView.collectionViewLayout.messageBubbleFont = [UIFont systemFontOfSize: 12.f];
+    
+    self.collectionView.collectionViewLayout.userFullNameMessageBubbleFont = [UIFont systemFontOfSize: 12.f];
+    self.collectionView.backgroundColor = [UIColor colorWithRed: 248.f/255.f green:248.f/255.f blue:250.f/255.f alpha:1.f];
     self.inputToolbar.contentView.textView.font = [UIFont systemFontOfSize: 14.f];
     self.inputToolbar.contentView.textView.placeHolder = @"Type your message…";
     
@@ -511,10 +514,10 @@
      *
      *  Show a timestamp for every 3rd message
      */
-    if (indexPath.item % 3 == 0) {
-        JSQMessage *message = [self.demoData.messages objectAtIndex:indexPath.item];
-        return [[JSQMessagesTimestampFormatter sharedFormatter] attributedTimestampForDate:message.date];
-    }
+//    if (indexPath.item % 3 == 0) {
+//        JSQMessage *message = [self.demoData.messages objectAtIndex:indexPath.item];
+//        return [[JSQMessagesTimestampFormatter sharedFormatter] attributedTimestampForDate:message.date];
+//    }
     
     return nil;
 }
@@ -581,12 +584,15 @@
     
     if (!msg.isMediaMessage) {
         
-        if ([msg.senderId isEqualToString: self.senderId]) {
-            cell.textView.textColor = [UIColor blackColor];
-        }
-        else {
-            cell.textView.textColor = [UIColor whiteColor];
-        }
+         cell.textView.textColor = [UIColor colorWithRed: 121.f/255.f green: 121.f/255.f blue: 121.f/255.f alpha: 1.0];
+
+        
+//        if ([msg.senderId isEqualToString: self.senderId]) {
+////            cell.textView.textColor = [UIColor blackColor];
+//        }
+//        else {
+////            cell.textView.textColor = [UIColor whiteColor];
+//        }
         
         cell.textView.linkTextAttributes = @{ NSForegroundColorAttributeName : cell.textView.textColor,
                                               NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle | NSUnderlinePatternSolid) };
@@ -657,9 +663,9 @@
      *
      *  Show a timestamp for every 3rd message
      */
-    if (indexPath.item % 3 == 0) {
-        return kJSQMessagesCollectionViewCellLabelHeightDefault;
-    }
+//    if (indexPath.item % 3 == 0) {
+//        return kJSQMessagesCollectionViewCellLabelHeightDefault;
+//    }
     
     return 0.0f;
 }

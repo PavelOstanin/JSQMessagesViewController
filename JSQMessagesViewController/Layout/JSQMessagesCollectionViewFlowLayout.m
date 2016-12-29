@@ -158,6 +158,16 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 32.0f;
     [self invalidateLayoutWithContext:[JSQMessagesCollectionViewFlowLayoutInvalidationContext context]];
 }
 
+- (void) setUserFullNameMessageBubbleFont : (UIFont*) userFullNameMessageBubbleFont {
+    if ([_userFullNameMessageBubbleFont isEqual: userFullNameMessageBubbleFont]) {
+        return;
+    }
+    
+    NSParameterAssert(userFullNameMessageBubbleFont != nil);
+    _userFullNameMessageBubbleFont = userFullNameMessageBubbleFont;
+    [self invalidateLayoutWithContext:[JSQMessagesCollectionViewFlowLayoutInvalidationContext context]];
+}
+
 - (void)setMessageBubbleLeftRightMargin:(CGFloat)messageBubbleLeftRightMargin
 {
     NSParameterAssert(messageBubbleLeftRightMargin >= 0.0f);
@@ -415,16 +425,13 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 32.0f;
 #warning РАСЧЕТ ЯЧЕЙКИ
     
     
-    
-    
-    
     NSString *text1 = [messageItem senderDisplayName];
     NSString *text2 = @"12/12/99";
     
     CGRect rect1 = CGRectZero;
     CGRect rect2 = CGRectZero;
 
-    NSDictionary *attrDict = @{NSFontAttributeName : [UIFont systemFontOfSize: 17]};
+    NSDictionary *attrDict = @{NSFontAttributeName : self.userFullNameMessageBubbleFont};
     
     rect1 = [text1 boundingRectWithSize:CGSizeMake(0,9999)
                                 options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
@@ -440,7 +447,7 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 32.0f;
     NSLog(@"%f", rect1.size.width);
     NSLog(@"%f", rect2.size.width);
     
-    CGFloat cellWidth = MIN([UIScreen mainScreen].bounds.size.width - 108.f, rect1.size.width + rect2.size.width + 8.f + 32.f);
+    CGFloat cellWidth = MIN([UIScreen mainScreen].bounds.size.width - 108.f, rect1.size.width + rect2.size.width + 8.f + 32.f + 8.f);
     
             cellSize = CGSizeMake(MAX(cellWidth, cellSize.width) , cellSize.height);
 
@@ -481,6 +488,8 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 32.0f;
     layoutAttributes.textViewTextContainerInsets = self.messageBubbleTextViewTextContainerInsets;
     
     layoutAttributes.messageBubbleFont = self.messageBubbleFont;
+    
+    layoutAttributes.userFullNameMessageBubbleFont = self.userFullNameMessageBubbleFont;
     
     layoutAttributes.incomingAvatarViewSize = self.incomingAvatarViewSize;
     

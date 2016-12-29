@@ -102,6 +102,10 @@ NS_ASSUME_NONNULL_BEGIN
  *  
  *  @discussion The default value is the preferred system font for `UIFontTextStyleBody`. This value must not be `nil`.
  */
+
+@property (strong, nonatomic) UIFont *userFullNameMessageBubbleFont;
+
+
 @property (strong, nonatomic) UIFont *messageBubbleFont;
 
 /**
