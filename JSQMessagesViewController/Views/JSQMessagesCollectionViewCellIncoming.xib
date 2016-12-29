@@ -51,18 +51,18 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0f-ND-cmW">
-                                <rect key="frame" x="16" y="72" width="131" height="0.0"/>
+                                <rect key="frame" x="16" y="72" width="0.0" height="0.0"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TU4-w3-kkY">
-                                <rect key="frame" x="155" y="67" width="74" height="10"/>
+                                <rect key="frame" x="24" y="67" width="74" height="10"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="Auv-4n-eE9"/>
-                                    <constraint firstAttribute="width" constant="74" id="vgg-mn-cD7"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="vgg-mn-cD7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -80,7 +80,7 @@
                             <constraint firstItem="KYU-B8-cUW" firstAttribute="top" secondItem="btS-p8-B7Z" secondAttribute="top" id="aEL-yH-N1p"/>
                             <constraint firstAttribute="bottom" secondItem="OCS-Fu-acq" secondAttribute="bottom" id="aJ4-ZD-tk9"/>
                             <constraint firstAttribute="bottom" secondItem="TU4-w3-kkY" secondAttribute="bottom" constant="10" id="q8G-Qy-mka"/>
-                            <constraint firstAttribute="trailing" secondItem="TU4-w3-kkY" secondAttribute="trailing" constant="15" id="qhW-PM-TgR"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TU4-w3-kkY" secondAttribute="trailing" constant="15" id="qhW-PM-TgR"/>
                             <constraint firstItem="OCS-Fu-acq" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" id="qpQ-dc-2V5"/>
                             <constraint firstAttribute="width" constant="244" id="stE-iz-VHo"/>
                             <constraint firstItem="TU4-w3-kkY" firstAttribute="centerY" secondItem="h0f-ND-cmW" secondAttribute="centerY" id="zCQ-7u-yRl"/>
