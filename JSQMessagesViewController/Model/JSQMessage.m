@@ -58,7 +58,7 @@
     NSParameterAssert(senderId != nil);
     NSParameterAssert(senderDisplayName != nil);
     NSParameterAssert(messageDateString != nil);
-    NSParameterAssert(senderPictureURL != nil);
+//    NSParameterAssert(senderPictureURL != nil);
     
     self = [super init];
     if (self) {
