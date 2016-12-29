@@ -58,11 +58,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TU4-w3-kkY">
-                                <rect key="frame" x="24" y="67" width="74" height="10"/>
+                                <rect key="frame" x="24" y="67" width="70" height="10"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="Auv-4n-eE9"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="vgg-mn-cD7"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="vgg-mn-cD7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
