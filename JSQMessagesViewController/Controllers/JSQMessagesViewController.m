@@ -999,4 +999,9 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
                      completion:nil];
 }
 
+- (IBAction)backNavigationButtonDidTouch:(id)sender {
+}
+
+- (IBAction)settingsNavigationButtonDidTouch:(id)sender {
+}
 @end

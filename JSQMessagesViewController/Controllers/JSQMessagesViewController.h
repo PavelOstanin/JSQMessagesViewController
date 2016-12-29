@@ -307,6 +307,19 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)didReceiveMenuWillHideNotification:(NSNotification *)notification;
 
+@property (weak, nonatomic) IBOutlet UIButton *backNavigationButton;
+@property (weak, nonatomic) IBOutlet UIButton *settingsNavigationButton;
+
+
+- (IBAction)backNavigationButtonDidTouch:(id)sender;
+- (IBAction)settingsNavigationButtonDidTouch:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *chatTitleLabel;
+
+@property (weak, nonatomic) IBOutlet UIView *chatSettingsView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *chatSettingsViewBottomConstraint;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END
