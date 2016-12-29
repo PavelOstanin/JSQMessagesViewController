@@ -31,7 +31,7 @@
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="BoD-Az-3DM" customClass="JSQMessagesInputToolbar">
                     <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="Kfv-l7-GDh"/>
+                        <constraint firstAttribute="height" constant="44" id="Kfv-l7-GDh"/>
                     </constraints>
                     <items/>
                 </toolbar>
