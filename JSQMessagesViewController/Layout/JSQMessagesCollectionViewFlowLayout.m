@@ -426,7 +426,7 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 32.0f;
     
     
     NSString *text1 = [messageItem senderDisplayName];
-    NSString *text2 = @"12/12/99";
+    NSString *text2 = [messageItem messageDateString];
     
     CGRect rect1 = CGRectZero;
     CGRect rect2 = CGRectZero;
