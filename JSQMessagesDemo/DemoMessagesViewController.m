@@ -489,6 +489,7 @@
      *
      *  Override the defaults in `viewDidLoad`
      */
+    
     JSQMessage *message = [self.demoData.messages objectAtIndex:indexPath.item];
     
     if ([message.senderId isEqualToString:self.senderId]) {
@@ -585,7 +586,6 @@
     if (!msg.isMediaMessage) {
         
          cell.textView.textColor = [UIColor colorWithRed: 121.f/255.f green: 121.f/255.f blue: 121.f/255.f alpha: 1.0];
-
         
 //        if ([msg.senderId isEqualToString: self.senderId]) {
 ////            cell.textView.textColor = [UIColor blackColor];

@@ -520,8 +520,9 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     
     if (!isMediaMessage) {
         cell.textView.text = [messageItem text];
-//        cell.userNameLabel.text = [messageItem senderDisplayName];
-        cell.messageDateLabel.text = @"12/12/99";
+        cell.messageDateLabel.text = [messageItem messageDateString];
+//        cell.avatarImageView.image = [messageItem senderPicture];
+//        cell.messageDateLabel.text = @"12/12/99";
         
         NSParameterAssert(cell.textView.text != nil);
 
@@ -542,7 +543,23 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     else if (!isOutgoingMessage && CGSizeEqualToSize(collectionView.collectionViewLayout.incomingAvatarViewSize, CGSizeZero)) {
         needsAvatar = NO;
     }
-
+    
+    
+//    if (needsAvatar) {
+//
+//        UIImage *avatarImage = [messageItem senderPicture];
+//        if (avatarImage == nil) {
+////            cell.avatarImageView.image = [avatarImageDataSource avatarPlaceholderImage];
+//            cell.avatarImageView.highlightedImage = nil;
+//        }
+//        else {
+//            cell.avatarImageView.image = avatarImage;
+//            cell.avatarImageView.highlightedImage = [messageItem senderPicture];
+//        }
+//
+//    }
+//    
+    
     id<JSQMessageAvatarImageDataSource> avatarImageDataSource = nil;
     if (needsAvatar) {
         avatarImageDataSource = [collectionView.dataSource collectionView:collectionView avatarImageDataForItemAtIndexPath:indexPath];

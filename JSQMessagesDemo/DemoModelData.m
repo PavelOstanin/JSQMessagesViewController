@@ -67,7 +67,6 @@
                           kJSQDemoAvatarIdJobs : jobsImage,
                           kJSQDemoAvatarIdWoz : wozImage };
         
-        
         self.users = @{ kJSQDemoAvatarIdJobs : kJSQDemoAvatarDisplayNameJobs,
                         kJSQDemoAvatarIdCook : kJSQDemoAvatarDisplayNameCook,
                         kJSQDemoAvatarIdWoz : kJSQDemoAvatarDisplayNameWoz,
@@ -101,11 +100,15 @@
     
     
     
+    
     self.messages = [[NSMutableArray alloc] initWithObjects:
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
                                         senderDisplayName:kJSQDemoAvatarDisplayNameSquires
                                                      date:[NSDate distantPast]
                                                      text:NSLocalizedString(@"Welcome to JSQMessages: A messaging UI framework for iOS.", nil)],
+                     
+//                     [[JSQMessage alloc] initWithSenderId: kJSQDemoAvatarIdSquires senderDisplayName: kJSQDemoAvatarDisplayNameSquires messageDateString: @"34/34/34" /*senderPicture: [UIImage imageNamed:@"demo_avatar_cook"]*/ text: @"HELLLLLOOOOO"],
+
                      
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdWoz
                                         senderDisplayName:kJSQDemoAvatarDisplayNameWoz

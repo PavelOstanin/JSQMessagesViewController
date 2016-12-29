@@ -47,6 +47,34 @@
     return self;
 }
 
+
+- (instancetype)initWithSenderId:(NSString *)senderId
+               senderDisplayName:(NSString *)senderDisplayName
+               messageDateString:(NSString *)messageDateString
+                senderPictureURL:(NSURL *)senderPictureURL
+                            text:(NSString *)text
+{
+    NSParameterAssert(text != nil);
+    NSParameterAssert(senderId != nil);
+    NSParameterAssert(senderDisplayName != nil);
+    NSParameterAssert(messageDateString != nil);
+    NSParameterAssert(senderPictureURL != nil);
+    
+    self = [super init];
+    if (self) {
+        _senderId = [senderId copy];
+        _senderDisplayName = [senderDisplayName copy];
+        _messageDateString = [messageDateString copy];
+        _senderPictureURL = [senderPictureURL copy];
+        _text = [text copy];
+        _isMediaMessage = NO;
+    }
+    return self;
+}
+
+
+
+
 + (instancetype)messageWithSenderId:(NSString *)senderId
                         displayName:(NSString *)displayName
                               media:(id<JSQMessageMediaData>)media
@@ -140,6 +168,7 @@
 
 #pragma mark - NSCoding
 
+#warning NEED TO BE CAREFUl WITH THIS
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super init];

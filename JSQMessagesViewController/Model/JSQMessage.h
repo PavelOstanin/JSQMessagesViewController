@@ -41,6 +41,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (copy, nonatomic, readonly) NSString *senderDisplayName;
 
+@property (copy, nonatomic, readonly) NSString *messageDateString;
+
+@property (copy, nonatomic, readonly) NSURL *senderPictureURL;
+
 /**
  *  Returns the date that the message was sent.
  */
@@ -100,6 +104,13 @@ NS_ASSUME_NONNULL_BEGIN
                senderDisplayName:(NSString *)senderDisplayName
                             date:(NSDate *)date
                             text:(NSString *)text;
+
+- (instancetype)initWithSenderId:(NSString *)senderId
+               senderDisplayName:(NSString *)senderDisplayName
+               messageDateString:(NSString *)messageDateString
+                senderPictureURL:(NSURL *)senderPictureURL
+                            text:(NSString *)text;
+
 /**
  *  Initializes and returns a message object having the given senderId, displayName, media,
  *  and current system date.

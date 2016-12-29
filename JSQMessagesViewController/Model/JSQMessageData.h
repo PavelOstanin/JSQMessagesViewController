@@ -61,6 +61,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSDate *)date;
 
+
 /**
  *  This method is used to determine if the message data item contains text or media.
  *  If this method returns `YES`, an instance of `JSQMessagesViewController` will ignore 
@@ -91,6 +92,10 @@ NS_ASSUME_NONNULL_BEGIN
  *  @warning You must not return `nil` from this method.
  */
 - (NSString *)text;
+
+- (NSString *) messageDateString;
+
+//- (UIImage *) senderPicture;
 
 /**
  *  @return The media item of the message.
