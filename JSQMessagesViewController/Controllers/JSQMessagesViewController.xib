@@ -13,7 +13,7 @@
             <connections>
                 <outlet property="backNavigationButton" destination="pvd-Ez-2l6" id="ToG-GL-r8i"/>
                 <outlet property="chatSettingsView" destination="6vy-jH-C8w" id="OuX-wk-GK2"/>
-                <outlet property="chatSettingsViewBottomConstraint" destination="N7r-vR-ANN" id="iGW-GU-guP"/>
+                <outlet property="chatSettingsViewHeightConstraint" destination="PxB-hc-SQj" id="JwI-T2-tws"/>
                 <outlet property="chatTitleLabel" destination="zK0-kj-syA" id="sWx-sS-4L1"/>
                 <outlet property="collectionView" destination="l9u-2b-4LK" id="bLP-6g-CkO"/>
                 <outlet property="inputToolbar" destination="BoD-Az-3DM" id="w74-g9-1qA"/>

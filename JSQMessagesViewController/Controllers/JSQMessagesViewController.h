@@ -316,7 +316,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *chatTitleLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *chatSettingsView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *chatSettingsViewBottomConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *chatSettingsViewHeightConstraint;
 
 
 
