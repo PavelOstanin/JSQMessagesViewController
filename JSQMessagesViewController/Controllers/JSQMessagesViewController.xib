@@ -48,7 +48,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHd-JO-gFw">
-                            <rect key="frame" x="0.0" y="63" width="375" height="1"/>
+                            <rect key="frame" x="0.0" y="62" width="375" height="1"/>
                             <color key="backgroundColor" red="0.81568627449999997" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="Qr7-f1-TBh"/>
@@ -93,7 +93,7 @@
                         <constraint firstItem="pvd-Ez-2l6" firstAttribute="leading" secondItem="5gr-Fm-L7m" secondAttribute="leading" constant="8" id="SB1-R7-4oB"/>
                         <constraint firstAttribute="trailing" secondItem="rPK-Bh-tIp" secondAttribute="trailing" constant="8" id="bke-WB-0l3"/>
                         <constraint firstItem="zK0-kj-syA" firstAttribute="leading" secondItem="pvd-Ez-2l6" secondAttribute="trailing" constant="8" id="sxe-Az-jdk"/>
-                        <constraint firstAttribute="bottom" secondItem="XHd-JO-gFw" secondAttribute="bottom" id="ugE-q4-SDZ"/>
+                        <constraint firstAttribute="bottom" secondItem="XHd-JO-gFw" secondAttribute="bottom" constant="1" id="ugE-q4-SDZ"/>
                         <constraint firstItem="rPK-Bh-tIp" firstAttribute="leading" secondItem="zK0-kj-syA" secondAttribute="trailing" constant="8" id="wzz-Rx-zHd"/>
                         <constraint firstAttribute="bottom" secondItem="rPK-Bh-tIp" secondAttribute="bottom" id="yDu-RB-30k"/>
                     </constraints>
