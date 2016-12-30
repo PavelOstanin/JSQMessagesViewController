@@ -14,6 +14,7 @@
                 <outlet property="backNavigationButton" destination="pvd-Ez-2l6" id="ToG-GL-r8i"/>
                 <outlet property="chatSettingsView" destination="6vy-jH-C8w" id="OuX-wk-GK2"/>
                 <outlet property="chatSettingsViewHeightConstraint" destination="PxB-hc-SQj" id="JwI-T2-tws"/>
+                <outlet property="chatSettingsViewTopConstraint" destination="T8j-Lq-sGT" id="IeS-KR-lee"/>
                 <outlet property="chatTitleLabel" destination="zK0-kj-syA" id="sWx-sS-4L1"/>
                 <outlet property="collectionView" destination="l9u-2b-4LK" id="bLP-6g-CkO"/>
                 <outlet property="inputToolbar" destination="BoD-Az-3DM" id="w74-g9-1qA"/>
@@ -27,7 +28,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l9u-2b-4LK" customClass="JSQMessagesCollectionView">
-                    <rect key="frame" x="0.0" y="65" width="375" height="602"/>
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <collectionViewLayout key="collectionViewLayout" id="dZl-7C-LHR" customClass="JSQMessagesCollectionViewFlowLayout"/>
                     <cells/>
@@ -36,6 +37,13 @@
                     <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                     <items/>
                 </toolbar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vy-jH-C8w">
+                    <rect key="frame" x="0.0" y="-93" width="375" height="157"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="157" id="PxB-hc-SQj"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gr-Fm-L7m">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                     <subviews>
@@ -80,13 +88,6 @@
                         <constraint firstAttribute="bottom" secondItem="rPK-Bh-tIp" secondAttribute="bottom" id="yDu-RB-30k"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vy-jH-C8w">
-                    <rect key="frame" x="0.0" y="64" width="375" height="1"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="1" id="PxB-hc-SQj"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -98,7 +99,7 @@
                 <constraint firstItem="l9u-2b-4LK" firstAttribute="leading" secondItem="mUa-cS-ru4" secondAttribute="leading" id="MmF-oh-Y75"/>
                 <constraint firstItem="l9u-2b-4LK" firstAttribute="top" secondItem="6vy-jH-C8w" secondAttribute="bottom" id="N7r-vR-ANN"/>
                 <constraint firstAttribute="trailing" secondItem="l9u-2b-4LK" secondAttribute="trailing" id="O9u-TA-A0e"/>
-                <constraint firstItem="6vy-jH-C8w" firstAttribute="top" secondItem="5gr-Fm-L7m" secondAttribute="bottom" id="T8j-Lq-sGT"/>
+                <constraint firstItem="6vy-jH-C8w" firstAttribute="top" secondItem="5gr-Fm-L7m" secondAttribute="bottom" constant="-157" id="T8j-Lq-sGT"/>
                 <constraint firstItem="5gr-Fm-L7m" firstAttribute="leading" secondItem="mUa-cS-ru4" secondAttribute="leading" id="fkj-J0-5SR"/>
                 <constraint firstItem="6vy-jH-C8w" firstAttribute="leading" secondItem="mUa-cS-ru4" secondAttribute="leading" id="py6-ok-RDJ"/>
                 <constraint firstAttribute="bottom" secondItem="BoD-Az-3DM" secondAttribute="bottom" id="rHs-6q-NX4"/>
