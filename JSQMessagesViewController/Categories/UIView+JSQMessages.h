@@ -37,6 +37,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)jsq_pinAllEdgesOfSubview:(UIView *)subview;
 
+
+-(void) roundView;
+
 @end
 
 NS_ASSUME_NONNULL_END

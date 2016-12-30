@@ -39,4 +39,10 @@
     [self jsq_pinSubview:subview toEdge:NSLayoutAttributeTrailing];
 }
 
+-(void) roundView {
+    self.layer.cornerRadius = (self.frame.size.height / 2);
+    self.layer.masksToBounds = YES;
+}
+
+
 @end

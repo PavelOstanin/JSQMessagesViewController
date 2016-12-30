@@ -119,6 +119,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     
     self.backgroundColor = [UIColor whiteColor];
     self.avatarViewSize = CGSizeZero;
+    [self.avatarImageView roundView];
+    self.avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
     
     UIFont *topLabelFont = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
     self.cellTopLabel.textAlignment = NSTextAlignmentCenter;
