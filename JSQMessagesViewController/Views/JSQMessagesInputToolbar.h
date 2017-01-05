@@ -118,6 +118,8 @@ typedef NS_ENUM(NSUInteger, JSQMessagesInputSendButtonLocation) {
  */
 - (JSQMessagesToolbarContentView *)loadToolbarContentView;
 
+- (void)updateSendButtonEnabledState;
+
 @end
 
 NS_ASSUME_NONNULL_END
