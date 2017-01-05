@@ -90,6 +90,12 @@
     return [UIImage jsq_bubbleImageFromBundleWithName:@"smile_ic"];
 }
 
++ (UIImage *)jsq_selectedAccessoryImage
+{
+    return [UIImage jsq_bubbleImageFromBundleWithName:@"type"];
+}
+
+
 + (UIImage *)jsq_defaultSendMessageButtonImage
 {
     return [UIImage jsq_bubbleImageFromBundleWithName:@"send_message"];

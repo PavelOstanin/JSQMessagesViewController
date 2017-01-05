@@ -68,7 +68,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (UIImage *)jsq_defaultAccessoryImage;
 
++ (UIImage *)jsq_selectedAccessoryImage;
+
 + (UIImage *)jsq_defaultSendMessageButtonImage;
+
 
 /**
  *  @return The default typing indicator image.

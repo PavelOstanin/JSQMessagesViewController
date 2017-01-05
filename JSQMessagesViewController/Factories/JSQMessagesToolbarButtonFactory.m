@@ -50,10 +50,12 @@
 - (UIButton *)defaultAccessoryButtonItem
 {
     UIImage *accessoryImage = [UIImage jsq_defaultAccessoryImage];
+    UIImage *accessorySelectedImage = [UIImage jsq_selectedAccessoryImage];
 
     UIButton *accessoryButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, accessoryImage.size.width, 32.0f)];
     [accessoryButton setImage:accessoryImage forState:UIControlStateNormal];
     [accessoryButton setImage:accessoryImage forState:UIControlStateHighlighted];
+    [accessoryButton setImage:accessorySelectedImage forState:UIControlStateSelected];
 
     accessoryButton.contentMode = UIViewContentModeScaleAspectFit;
     accessoryButton.backgroundColor = [UIColor clearColor];
